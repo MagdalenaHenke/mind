@@ -12,6 +12,10 @@
     "type": "git",
     "url": "git+https://github.com/MagdalenaHenke/mind.git"
   },
+  "homepage" : "http://MagdalenaHenke.github.io/mind",
+  "scripts": {
+   "deploy": "gh-pages -d build"
+  },
   "author": "Magdalena Henke",
   "license": "MIT",
   "homepage": "https://github.com/MagdalenaHenke/mind"
