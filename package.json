@@ -5,6 +5,7 @@
   "dependencies": {
     "express": "^4.17.1",
     "node": "^13.3.0",
+    "npm": "^6.13.4",
     "socket.io": "^2.3.0"
   },
   "devDependencies": {},
@@ -12,11 +13,10 @@
     "type": "git",
     "url": "git+https://github.com/MagdalenaHenke/mind.git"
   },
-  "homepage" : "http://MagdalenaHenke.github.io/mind",
+  "homepage": "https://github.com/MagdalenaHenke/mind",
   "scripts": {
-   "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build"
   },
   "author": "Magdalena Henke",
-  "license": "MIT",
-  "homepage": "https://github.com/MagdalenaHenke/mind"
+  "license": "MIT"
 }

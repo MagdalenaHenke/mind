@@ -4,6 +4,8 @@ var http = require('http').createServer(app);
 var path = require('path');
 var io = require('socket.io')(http);
 
+// Leena: keep the game state on the server?
+
 app.get('/', function(req, res) {
   res.sendFile(path.join(__dirname + '/index.html'));
 });

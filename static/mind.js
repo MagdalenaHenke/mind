@@ -1,8 +1,6 @@
 $(function() {
   var socket = io();
 
-  // todo: move all this out of the script tag at some point ;)
-
   // emit socket event when number is submitted
   $('form').submit(function(e) {
     e.preventDefault(); // prevents page reloading
