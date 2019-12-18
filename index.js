@@ -7,7 +7,11 @@ var io = require('socket.io')(http);
 // Leena: keep the game state on the server?
 
 app.get('/', function(req, res) {
-  res.sendFile(path.join(__dirname + '/index.html'));
+  res.sendFile(path.join(__dirname + '/home.html'));
+});
+
+app.get('/game', function(req, res) {
+  res.sendFile(path.join(__dirname + '/game.html'));
 });
 
 app.use('/static', express.static('./static/'));

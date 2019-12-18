@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Game - The Mind</title>
+
+    <!-- loading bulma and fontawesome TODO: do we need fontawesome?-->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"
+    />
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
+    ></script>
+
+    <!-- Socket.io scripts TODO: do I wanna keep jquery?-->
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+
+    <script type="text/javascript" src="./static/game.js"></script>
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <h1 class="title">A Mildly Amused Mind</h1>
+        <section class="section">
+          <h2 class="title is-4" id="h2_numbersPlayedByMeBefore">
+            Numbers Played By Me
+          </h2>
+          <ul
+            id="numbersPlayedByMeBefore"
+            aria-labelledby="h2_numbersPlayedByMeBefore"
+          ></ul>
+        </section>
+        <section class="section">
+          <h2 class="title is-4" id="h2_numbersPlayedByOthersBefore">
+            Numbers Played By Others
+          </h2>
+          <ul
+            id="numbersPlayedByOthersBefore"
+            aria-labelledby="h2_numbersPlayedByOthersBefore"
+          ></ul>
+        </section>
+        <section class="section">
+          <h2 class="title is-4" id="h2_allNumbersPlayedBefore">
+            All Numbers Played
+          </h2>
+          <ul
+            id="allNumbersPlayedBefore"
+            aria-labelledby="h2_allNumbersPlayedBefore"
+          ></ul>
+        </section>
+        <section class="section">
+          <form action="">
+            <label class="label" for="numberInput">
+              Pick your next number to play:
+            </label>
+            <div class="field is-grouped">
+              <div class="control">
+                <input class="input is-large" type="number" id="numberInput" />
+              </div>
+              <button class="button is-large" type="submit">
+                Play this number
+              </button>
+            </div>
+          </form>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
