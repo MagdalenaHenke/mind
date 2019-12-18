@@ -16,10 +16,8 @@ io.on('connection', function(socket) {
 
   socket.on('number pick', function(msg) {
     console.log('message: ' + msg);
-  });
-
-  socket.on('number pick', function(msg) {
-    io.emit('chat message', msg);
+    io.emit('number pick', msg); // emit goes to _all_ sockets
+    socket.broadcast.emit('hi', msg); // broadcast goes to all other sockets
   });
 });
 

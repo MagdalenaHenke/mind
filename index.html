@@ -15,14 +15,28 @@
 
     <script>
       $(function () {
-         var socket = io();
-         $('form').submit(function(e){
-           e.preventDefault(); // prevents page reloading
-           socket.emit('number pick', $('#numberInput').val());
-           $('#numberInput').val('');
-           return false;
-         });
-       });
+        var socket = io();
+
+        // todo: move all this out of the script tag at some point ;)
+
+        // emit socket event when number is submitted
+        $('form').submit(function(e){
+          e.preventDefault(); // prevents page reloading
+          socket.emit('number pick', $('#numberInput').val());
+          $('#numberInput').val('');
+          return false;
+        });
+
+        // do stuff when other socket emits a thing
+        socket.on('number pick', function(msg){
+          $('#numbersPlayedBefore').append($('<li>').text(msg));
+        });
+
+        // checking how the broadcasting work
+        socket.on('hi', function(msg){
+          $('#numbersPlayedByOthersBefore').append($('<li>').text(msg));
+        });
+      });
     </script>
   </head>
   <body>
@@ -30,6 +44,8 @@
     <section class="section">
       <div class="container">
         <h1 class="title">A Mildly Amused Mind</h1>
+        <ul id="numbersPlayedByOthersBefore"></ul>
+        <ul id="numbersPlayedBefore"></ul>
         <form action="">
           <input type="number" id="numberInput">
           <button type="submit">Play this number</button>
