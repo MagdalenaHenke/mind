@@ -14,7 +14,13 @@ io.on('connection', function(socket){
   socket.on('disconnect', function(){
     console.log('user disconnected');
   });
+
+  socket.on('number pick', function(msg){
+    console.log('message: ' + msg);
+  });
 });
+
+
 // end of socket.io related things
 
 

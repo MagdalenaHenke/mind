@@ -3,16 +3,26 @@
   <head>
     <title>Mind - Mildly Amused</title>
 
-    <!-- loading bulma and fontawesome -->
+    <!-- loading bulma and fontawesome TODO: do we need fontawesome?-->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 
-    <!-- Socket.io scripts -->
+    <!-- Socket.io scripts TODO: do I wanna keep jquery?-->
     <script src="/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+
     <script>
-      var socket = io();
+      $(function () {
+         var socket = io();
+         $('form').submit(function(e){
+           e.preventDefault(); // prevents page reloading
+           socket.emit('number pick', $('#numberInput').val());
+           $('#numberInput').val('');
+           return false;
+         });
+       });
     </script>
   </head>
   <body>
@@ -20,6 +30,10 @@
     <section class="section">
       <div class="container">
         <h1 class="title">A Mildly Amused Mind</h1>
+        <form action="">
+          <input type="number" id="numberInput">
+          <button type="submit">Play this number</button>
+        </form>
     </section>
     </main>
   </body>
