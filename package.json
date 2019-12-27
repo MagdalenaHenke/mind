@@ -4,8 +4,10 @@
   "description": "online version of the mind card game",
   "dependencies": {
     "express": "^4.17.1",
+    "lodash": "^4.17.15",
     "node": "^13.3.0",
     "npm": "^6.13.4",
+    "pug": "^2.0.4",
     "socket.io": "^2.3.0"
   },
   "devDependencies": {},

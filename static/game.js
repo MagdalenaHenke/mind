@@ -1,3 +1,8 @@
+function getGameId() {
+  const gameUrlPath = '/game/'
+  return window.location.pathname.substring(window.location.pathname.indexOf(gameUrlPath) + gameUrlPath.length)
+}
+
 $(function() {
   var socket = io();
 
@@ -20,4 +25,13 @@ $(function() {
   socket.on('play:number_notSelf', function(msg) {
     $('#numbersPlayedByOthersBefore').append($('<li>').text(msg));
   });
+
+  socket.on('connect', function() {
+    const gameId = getGameId();
+    socket.emit('joinGame', { gameId }); // Leena: standardize event names
+  });
+
+  socket.on('playerJoined', function(opts) {
+    console.log('player', opts.playerId, 'joined');
+  })
 });

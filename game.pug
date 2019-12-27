@@ -1,0 +1,40 @@
+doctype html
+head
+  title Game - The Mind
+
+  // loading bulma and fontawesome TODO: do we need fontawesome?
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+  link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css')
+  script(defer='' src='https://use.fontawesome.com/releases/v5.3.1/js/all.js')
+
+  // Socket.io scripts TODO: do I wanna keep jquery?
+  script(src='/socket.io/socket.io.js')
+  script(src='https://code.jquery.com/jquery-1.11.1.js')
+
+  // Leena: eventually avoid having to do ..
+  script(type='text/javascript' src='../static/game.js')
+main
+  .container
+    h1.title A Mildly Amused Mind
+    section.section
+      h2#h2_numbersPlayedByMeBefore.title.is-4
+        | Numbers Played By Me
+      ul#numbersPlayedByMeBefore(aria-labelledby='h2_numbersPlayedByMeBefore')
+    section.section
+      h2#h2_numbersPlayedByOthersBefore.title.is-4
+        | Numbers Played By Others
+      ul#numbersPlayedByOthersBefore(aria-labelledby='h2_numbersPlayedByOthersBefore')
+    section.section
+      h2#h2_allNumbersPlayedBefore.title.is-4
+        | All Numbers Played
+      ul#allNumbersPlayedBefore(aria-labelledby='h2_allNumbersPlayedBefore')
+    section.section
+      form(action='')
+        label.label(for='numberInput')
+          | Pick your next number to play:
+        .field.is-grouped
+          .control
+            input#numberInput.input.is-large(type='number')
+          button.button.is-large(type='submit')
+            | Play this number
