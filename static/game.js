@@ -34,4 +34,9 @@ $(function() {
   socket.on('playerJoined', function(opts) {
     console.log('player', opts.playerId, 'joined');
   })
+
+  socket.on('mistakeMade'), function(opts) {
+    console.log('mistakeMade', opts.cardPlayed);
+    // todo: remove all cards below the mistake made one
+  }
 });

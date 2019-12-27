@@ -1,9 +1,13 @@
-var express = require('express');
-var app = express();
-var http = require('http').createServer(app);
-var path = require('path');
-var io = require('socket.io')(http);
-var _ = require('lodash'); // Leena: do I need lodash?
+const express = require('express');
+const app = express();
+const http = require('http').createServer(app);
+const path = require('path');
+const io = require('socket.io')(http);
+const _ = require('lodash'); // Leena: do I need lodash?
+
+const Game = require('./classes/Game.js').Game;
+const Player = require('./classes/Player.js').Player;
+
 
 // Leena: keep the game state on the server?
 app.set('view engine', 'pug');
@@ -62,25 +66,6 @@ http.listen(4422, function() {
   console.log('listening on *:4422');
 });
 
-class Player { // LEENA: you know, move this into some other files
-  constructor(playerId, gameId) { // LEENA: also name and stuff?
-    this.playerId = playerId;
-    this.gameId = gameId;
-    this.cards = [];
-  }
-}
-
-class Game { // Leena: you know, move into some other file
-  constructor(gameId, player) {
-    this.gameId = gameId;
-    this.players = [player];
-    this.lives = 5; // LEENA: update this
-  }
-
-  addPlayer(player) {
-    this.players.push(player);
-  }
-}
 
 
 
