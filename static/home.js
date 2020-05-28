@@ -1,5 +1,7 @@
 $(function() {
-  let gameId = null;
+  function getGameLink(gameId) {
+    return window.location.href + 'game/' + gameId;
+  }
 
   function randomId() {
     return Math.random()
@@ -9,11 +11,13 @@ $(function() {
 
   function generateGame(evt) {
     gameId = randomId();
-    const gameLink = '/game/' + gameId;
-    $('#gameLink')
+    gameLink = getGameLink(gameId);
+    $('#newGameLink')
       .attr('href', gameLink)
-      .removeClass('is-hidden');
-    return gameId;
+      .text(gameLink);
+
+    $('#newGameText')
+      .removeClass('is-hidden')
   }
 
   $('#startGameButton').click(generateGame);
