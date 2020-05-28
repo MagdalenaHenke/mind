@@ -3,21 +3,19 @@ const app = express();
 const http = require('http').createServer(app);
 const path = require('path');
 const io = require('socket.io')(http);
-const _ = require('lodash'); // Leena: do I need lodash?
 
 const Game = require('./classes/Game.js').Game;
 const Player = require('./classes/Player.js').Player;
 
 
 // Leena: keep the game state on the server?
-app.set('view engine', 'pug');
 
 app.get('/', function(req, res) {
-  res.render(path.join(__dirname + '/home.pug'));
+  res.sendFile(path.join(__dirname + '/index.html'));
 });
 
 app.get('/game/:gameId', function(req, res) {
-  res.render(path.join(__dirname + '/game.pug'));
+  res.sendFile(path.join(__dirname + '/game.html'));
 });
 
 app.use('/static', express.static('./static/'));

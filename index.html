@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!-- Leena: Use some templating to not repeat stuff-->
+
+<head>
+    <title>Home - The Mind</title>
+    <!-- loading bulma and fontawesome TODO: do we need fontawesome?-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <script defer="" src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="./static/home.js"></script>
+</head>
+<main class="section">
+    <div class="container">
+        <h1 class="title">The Mind</h1>
+        <section class="section">
+            <h2 class="title">Start a Game</h2><button class="button" id="startGameButton">Start a new game</button>
+            <div class="is-hidden" id="newGameText">Link to that game:
+                <!-- add a copytoclipboard situation-->
+                <!-- or have them go to that new game and _there_ copy the link to start the game--><a id="newGameLink"></a></div>
+        </section>
+        <section class="section">
+            <h2 class="title">Join a game</h2>To join an existing game, get someone to send you a link to the game and join directly via the link.</section>
+    </div>
+</main>
