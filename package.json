@@ -8,15 +8,16 @@
     "npm": "^6.13.4",
     "socket.io": "^2.3.0"
   },
+  "scripts": {
+    "start": "node index.js",
+    "deploy": "gh-pages -d build"
+  },
   "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MagdalenaHenke/mind.git"
   },
   "homepage": "https://github.com/MagdalenaHenke/mind",
-  "scripts": {
-    "deploy": "gh-pages -d build"
-  },
   "author": "Magdalena Henke",
   "license": "MIT"
 }
