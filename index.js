@@ -20,6 +20,7 @@ app.get('/game/:gameId', function(req, res) {
 
 app.use('/static', express.static('./static/'));
 
+
 const games = {}; // Leena: move this into a game class
 const players = {};
 
@@ -59,9 +60,9 @@ io.on('connection', function(socket) {
 });
 
 // end of socket.io related things
-
-http.listen(4422, function() {
-  console.log('listening on *:4422');
+const port = process.env.PORT || 4422;
+http.listen(port, function() {
+  console.log(`listening on *:${port}`);
 });
 
 
