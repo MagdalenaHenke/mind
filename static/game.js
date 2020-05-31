@@ -3,6 +3,7 @@ function getGameId() {
   return window.location.pathname.substring(window.location.pathname.indexOf(gameUrlPath) + gameUrlPath.length)
 }
 
+// Leena: maybe just do it without jquery
 $(function() {
   var socket = io();
 

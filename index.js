@@ -20,6 +20,11 @@ app.get('/game/:gameId', function(req, res) {
 
 app.use('/static', express.static('./static/'));
 
+// show error page for all 404 errors
+app.use((req,res,next) => {
+  res.status(404).sendFile(path.join(__dirname + '/error.html'));
+});
+
 
 const games = {}; // Leena: move this into a game class
 const players = {};
